@@ -32,7 +32,7 @@
 namespace luagdextension {
 
 void LuaScriptMetadata::setup(const sol::table& t) {
-	is_valid = true;
+	is_importable = true;
 
 	sol::state_view L = t.lua_state();
 	StackTopChecker topcheck(L);
@@ -91,6 +91,7 @@ void LuaScriptMetadata::setup(const sol::table& t) {
 }
 
 void LuaScriptMetadata::clear() {
+	is_importable = false;
 	is_valid = false;
 	is_tool = false;
 	base_class = RefCounted::get_class_static();
