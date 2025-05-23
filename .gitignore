@@ -5,6 +5,7 @@ __pycache__/
 
 # Built files
 build/*
+build/
 !build/.gdignore
 *.o
 *.os
@@ -21,6 +22,7 @@ compile_commands.json
 addons/lua-gdextension/CHANGELOG.md
 addons/lua-gdextension/README.md
 addons/lua-gdextension/LICENSE
+/addons/lua-gdextension/build
 src/generated/
 src/generated-document/
 
