@@ -20,12 +20,14 @@
  * SOFTWARE.
  */
 #include "LuaCoroutine.hpp"
+#include "LuaDebug.hpp"
 #include "LuaError.hpp"
 #include "LuaFunction.hpp"
 #include "LuaLightUserdata.hpp"
 #include "LuaObject.hpp"
 #include "LuaState.hpp"
 #include "LuaTable.hpp"
+#include "LuaThread.hpp"
 #include "LuaUserdata.hpp"
 #include "script-language/LuaCodeEdit.hpp"
 #include "script-language/LuaScript.hpp"
@@ -49,6 +51,7 @@ static void initialize(ModuleInitializationLevel level) {
 	// Lua object wrappers
 	ClassDB::register_abstract_class<LuaObject>();
 
+	ClassDB::register_abstract_class<LuaThread>();
 	ClassDB::register_abstract_class<LuaCoroutine>();
 	ClassDB::register_abstract_class<LuaFunction>();
 	ClassDB::register_abstract_class<LuaLightUserdata>();
@@ -56,6 +59,7 @@ static void initialize(ModuleInitializationLevel level) {
 	ClassDB::register_abstract_class<LuaUserdata>();
 
 	// Godot classes for interacting with Lua States
+	ClassDB::register_abstract_class<LuaDebug>();
 	ClassDB::register_class<LuaError>();
 	ClassDB::register_class<LuaState>();
 
